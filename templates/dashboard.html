@@ -5,7 +5,6 @@
 
   <a href="{{ url_for('logout') }}" style="float:right; text-decoration: none; color: #007bff;"></a>
 
-  <!-- Formulario para crear nueva tarea -->
   <form method="post" action="/dashboard">
       <input type="text" name="title" placeholder="Título" required>
       <input type="text" name="description" placeholder="Descripción" required>
@@ -14,7 +13,6 @@
 
   <hr>
 
-  <!-- Lista de tareas del usuario -->
   {% for task in tasks %}
     <div class="task-card">
       <p><strong>{{ task['title'] }}</strong> 
@@ -24,19 +22,16 @@
       </p>
       <p>{{ task['description'] }}</p>
 
-      <!-- Formulario para editar tarea -->
       <form method="post" action="{{ url_for('edit_task', task_id=task['id']) }}">
         <input type="text" name="title" value="{{ task['title'] }}" required>
         <input type="text" name="description" value="{{ task['description'] }}" required>
         <button type="submit" class="edit-button">Editar</button>
       </form>
 
-      <!-- Formulario para eliminar tarea -->
       <form method="post" action="{{ url_for('delete_task', task_id=task['id']) }}">
         <button type="submit" class="delete-button">Eliminar</button>
       </form>
 
-      <!-- Formulario para marcar como completada -->
       {% if not task['completed'] %}
         <form method="post" action="{{ url_for('complete_task', task_id=task['id']) }}" style="display:inline;">
             <button type="submit">Marcar como completada</button>

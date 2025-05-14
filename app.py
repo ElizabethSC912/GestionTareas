@@ -7,7 +7,6 @@ app = Flask(__name__)
 app.secret_key = 'clave_secreta'
 DATABASE = 'tareas.db'
 
-# Conexión directa sin usar `g`
 def get_db_connection():
     conn = sqlite3.connect(DATABASE)
     conn.row_factory = sqlite3.Row
@@ -91,7 +90,7 @@ def login():
 
 @app.route('/')
 def index():
-    # Verificamos si el usuario está logueado (esto puede ser redundante si ya usas `@login_required`)
+    
     if 'user_id' not in session:
         return redirect('/login')
 
@@ -105,28 +104,28 @@ def index():
     return render_template('index.html', tasks=tasks)
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
-    # Verificamos si el usuario está logueado
+    
     if 'user_id' not in session:
         return redirect('/login')
 
-    # Conexión a la base de datos
+  
     conn = get_db_connection()
 
-    # Mostrar las tareas del usuario
+  
     tasks = conn.execute(
         'SELECT * FROM tasks WHERE user_id = ?',
         (session['user_id'],)
     ).fetchall()
 
     if request.method == 'POST':
-        # Recoger los datos del formulario para crear una nueva tarea
+        
         title = request.form['title']
         description = request.form['description']
 
         if not title or not description:
             return 'Por favor, ingresa título y descripción.'
 
-        # Guardamos la nueva tarea en la base de datos
+        
         conn.execute(
             'INSERT INTO tasks (title, description, completed, user_id) VALUES (?, ?, ?, ?)',
             (title, description, False, session['user_id'])
@@ -144,7 +143,7 @@ def edit_task(task_id):
     if 'user_id' not in session:
         return redirect('/login')
 
-    # Asegúrate de que los campos del formulario existan
+    
     title = request.form.get('title')
     description = request.form.get('description')
 
@@ -198,9 +197,9 @@ def complete_task(task_id):
 
 @app.route('/logout')
 def logout():
-    # Eliminar el 'user_id' de la sesión para cerrar sesión
+    
     session.pop('user_id', None)
-    return redirect('/login')  # Redirigir al inicio de sesión
+    return redirect('/login')  
 
 if __name__ == '__main__':
     app.run(debug=True)

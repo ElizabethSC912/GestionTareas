@@ -1,4 +1,4 @@
-/* General Styles */
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
@@ -22,7 +22,6 @@ h2 {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Buttons */
 button {
     background-color: #4CAF50;
     color: white;
@@ -38,7 +37,6 @@ button:hover {
     background-color: #45a049;
 }
 
-/* Input Fields */
 input[type="text"] {
     padding: 10px;
     width: calc(100% - 22px);
@@ -48,7 +46,6 @@ input[type="text"] {
     font-size: 16px;
 }
 
-/* Task Card */
 .task-card {
     margin-bottom: 20px;
     padding: 15px;
@@ -73,18 +70,18 @@ input[type="text"] {
 .task-card .delete-button {
     background-color: #e74c3c;
 }
-/* Barra de navegación */
+
 .navbar {
-    background-color: #333; /* Fondo negro */
-    color: white; /* Letra blanca */
+    background-color: #333; 
+    color: white; 
     padding: 10px;
     text-align: center;
     font-weight: bold;
 }
 
 .navbar a {
-    color: white; /* Color de los enlaces */
-    text-decoration: none; /* Quitar subrayado */
+    color: white; 
+    text-decoration: none; 
     padding: 10px 20px;
     margin: 0 10px;
     font-size: 18px;
@@ -92,12 +89,11 @@ input[type="text"] {
 }
 
 .navbar a:hover {
-    background-color: #555; /* Efecto al pasar el cursor */
+    background-color: #555; 
     border-radius: 5px;
 }
 
 
-/* Form */
 form {
     margin-top: 20px;
 }
