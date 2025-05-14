@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Gestión de Tareas{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #f2f2f2;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333; /* Fondo negro */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white; 
+            text-decoration: none; 
+            margin: 0 15px; 
+            font-size: 18px;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        form input, form button {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .task {
+            background: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/">Inicio</a>
+        {% if session.get('user_id') %}
+            <a href="/dashboard">Panel</a>
+            <a href="/logout">Cerrar sesión</a>
+        {% else %}
+            <a href="/login">Iniciar sesión</a>
+            <a href="/register">Registrarse</a>
+        {% endif %}
+    </nav>
+
+    {% block content %}{% endblock %}
+</body>
+</html>

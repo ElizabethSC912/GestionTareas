@@ -1,0 +1,103 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 30px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Input Fields */
+input[type="text"] {
+    padding: 10px;
+    width: calc(100% - 22px);
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Task Card */
+.task-card {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-card p {
+    margin: 5px 0;
+}
+
+.task-card .completed {
+    color: green;
+    font-weight: bold;
+}
+
+.task-card .edit-button, .task-card .delete-button {
+    background-color: #007bff;
+}
+
+.task-card .delete-button {
+    background-color: #e74c3c;
+}
+/* Barra de navegación */
+.navbar {
+    background-color: #333; /* Fondo negro */
+    color: white; /* Letra blanca */
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.navbar a {
+    color: white; /* Color de los enlaces */
+    text-decoration: none; /* Quitar subrayado */
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.navbar a:hover {
+    background-color: #555; /* Efecto al pasar el cursor */
+    border-radius: 5px;
+}
+
+
+/* Form */
+form {
+    margin-top: 20px;
+}
